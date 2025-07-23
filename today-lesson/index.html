@@ -1,0 +1,1342 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Daily Insight - SWOT</title><meta name="description" content="Showcasing the work, ideas, and growth of Muhammad Shoib."><meta name="generator" content="Publii Open-Source CMS for Static Site"><script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id="></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
+				  function gtag(){dataLayer.push(arguments);}
+				  gtag('js', new Date());
+				  gtag('config', '' );</script><meta name="theme-color" content="#17181E" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#D73A42" media="(prefers-color-scheme: light)"><meta name="msapplication-navbutton-color" content="#D73A42"><meta name="apple-mobile-web-app-status-bar-style" content="#D73A42"><link rel="canonical" href="https://swot.works/today-lesson/"><link rel="alternate" type="application/atom+xml" href="https://swot.works/feed.xml" title="SWOT - RSS"><link rel="alternate" type="application/json" href="https://swot.works/feed.json" title="SWOT - JSON"><meta property="og:title" content="Daily Insight"><meta property="og:site_name" content="SWOT"><meta property="og:description" content="Showcasing the work, ideas, and growth of Muhammad Shoib."><meta property="og:url" content="https://swot.works/today-lesson/"><meta property="og:type" content="article"><link rel="shortcut icon" href="https://swot.works/media/website/icons8-swot-analysis-50-3.png" type="image/png"><link rel="preload" href="https://swot.works/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://swot.works/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="https://swot.works/assets/css/style.css?v=1ffee8ac5ffec673011fbb68a67807a0"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://swot.works/today-lesson/"},"headline":"Daily Insight","datePublished":"2025-07-23T19:54+05:00","dateModified":"2025-07-23T22:33+05:00","description":"Showcasing the work, ideas, and growth of Muhammad Shoib.","author":{"@type":"Person","name":"Muhammad Shoib","url":"https://swot.works/authors/muhammad-shoib/"},"publisher":{"@type":"Organization","name":"Muhammad Shoib"}}</script><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript><style>.extlink::after {
+				background-color: currentColor;
+				content: "";
+				display: inline-block;
+				height: 16px;
+				margin-left: 5px;
+				position: relative;
+				top: 0px;
+				width: 16px;
+			}
+		
+					.extlink.extlink-icon-1::after {
+						mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'><path d='M15 3h6v6'/><path d='M10 14 21 3'/><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/></svg>");
+						mask-repeat: no-repeat;
+						mask-size: contain;
+					}</style><style>.ti{fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}</style></head><body class="post-template"><div class="container container--center"><header class="header"><div class="header__logo"><a class="logo" href="https://swot.works/">SWOT</a></div><nav class="navbar js-navbar"><button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://swot.works/services-and-solutions/" target="_self">Services &amp; Solutions</a></li><li><a href="https://swot.works/my-startup-journey/" target="_self">Startup Journey</a></li><li><a href="https://swot.works/client-journey/" target="_self">Client Journey</a></li><li><a href="https://swot.works/swot-on-boarding/" target="_self">SWOT On-boarding</a></li><li class="active"><a href="https://swot.works/today-lesson/" target="_self">Daily Insight</a></li><li><a href="https://swot.works/pricing-plans/" target="_self">Pricing Plans</a></li></ul></nav></header><main class="content"><article class="post"><header><h1 class="post__title">Daily Insight</h1><div class="post__meta"><time datetime="2025-07-23T19:54" class="post__date">July 23, 2025 </time><span class="post__author"><a href="https://swot.works/authors/muhammad-shoib/" class="feed__author">Muhammad Shoib</a></span></div></header><div class="post__entry"><div class="container"><h1> </h1><p id="quote-display">Loading an insightful quote...</p><p id="location-display">Detecting your location...</p><p id="time-display">Loading time...</p><p id="time-source-display"></p></div><p><script>// No API keys needed as weather API is removed.
+
+		// --- Global Variables ---
+		let userTimezone;
+		let timeUpdateInterval; // To clear and reset interval
+
+		// --- 1. Fetch Location from IP Address ---
+		async function fetchLocationFromIP() {
+			try {
+				// ip-api.com is free and supports client-side requests directly
+				const response = await fetch('http://ip-api.com/json/');
+				const data = await response.json();
+				if (data.status === 'success') {
+					userTimezone = data.timezone;
+					document.getElementById('location-display').textContent =
+						`Location: ${data.city}, ${data.country}`;
+
+					// Clear existing interval before setting a new one
+					if (timeUpdateInterval) clearInterval(timeUpdateInterval);
+					timeUpdateInterval = setInterval(updateLocationBasedTime, 1000);
+					updateLocationBasedTime(); // Initial call
+
+				} else {
+					document.getElementById('location-display').textContent = "Failed to detect location from IP. " + (data.message || "");
+					updateDeviceLocalTime(); // Fallback
+				}
+			} catch (error) {
+				console.error("Error fetching location from IP:", error);
+				document.getElementById('location-display').textContent = "Error detecting location. Check connection.";
+				updateDeviceLocalTime(); // Fallback
+			}
+		}
+
+		// --- 2. Display Time Relevant to that Location ---
+		function updateLocationBasedTime() {
+			if (!userTimezone) {
+				updateDeviceLocalTime(); // Fallback if timezone not available
+				return;
+			}
+			const now = new Date();
+			const timeString = now.toLocaleTimeString('en-US', {
+				timeZone: userTimezone,
+				hour: '2-digit',
+				minute: '2-digit',
+				second: '2-digit',
+				hour12: false // 24-hour format
+			});
+			const timezoneName = userTimezone.split('/').pop().replace(/_/g, ' '); // Get city name from timezone string
+			document.getElementById('time-display').textContent = timeString;
+			document.getElementById('time-source-display').textContent = `Time in ${timezoneName}`;
+		}
+
+		// Fallback for device local time if IP location fails
+		function updateDeviceLocalTime() {
+			if (timeUpdateInterval) clearInterval(timeUpdateInterval);
+			timeUpdateInterval = setInterval(() => {
+				const now = new Date();
+				const timeString = now.toLocaleTimeString('en-PK', {
+					hour: '2-digit',
+					minute: '2-digit',
+					second: '2-digit',
+					hour12: false
+				});
+				document.getElementById('time-display').textContent = timeString;
+				document.getElementById('time-source-display').textContent = `Current Device Time`;
+			}, 1000);
+			updateLocationBasedTime(); // Initial call
+		}
+
+		// --- Quotes: Random selection from the list on each refresh ---
+		const businessQuotes = [{
+				text: "A great accomplishment shouldn't be the end of the road, just the starting point for the next leap forward.",
+				author: "Harvey Mackay"
+			},
+			{
+				text: "Desire is the starting point of all achievement, not a hope, not a wish, but a keen pulsating desire which transcends everything.",
+				author: "Napoleon Hill"
+			},
+			{
+				text: "The joy is in the getting there. The beginning years of starting your business, the camaraderie when you're in the pit together, are the best years of your life. So rather than being so focused on when you get big and powerful, if you can just get the juice out of that… don't miss it.",
+				author: "Barbara Corcoran"
+			},
+			{
+				text: "Starting a new job can be nerve-racking, but it's also exciting. You're embarking on a new future, positioning yourself to write a fresh story on a clean slate.",
+				author: "Adena Friedman"
+			},
+			{
+				text: "Don't worry about failure, you only have to be right once.",
+				author: "Drew Houston"
+			},
+			{
+				text: "If you are not embarrassed by the first version of your product, you've launched too late.",
+				author: "Reid Hoffman, co-founder of LinkedIn"
+			},
+			{
+				text: "Get five or six of your smartest friends in a room and ask them to rate your idea.",
+				author: "Mark Pincus, CEO of Zynga"
+			},
+			{
+				text: "Don't worry about funding if you don't need it. Today it's cheaper to start a business than ever.",
+				author: "Noah Everett, founder of Twitpic"
+			},
+			{
+				text: "If you're trying to create a company, it's like baking a cake. You have to have all the ingredients in the right proportion.",
+				author: "Elon Musk"
+			},
+			{
+				text: "The most successful entrepreneurs I know are optimistic. It's part of the job description.",
+				author: "Caterina Fake, founder of Flickr"
+			},
+			{
+				text: "Your most unhappy customers are your greatest source of learning.",
+				author: "Bill Gates, Microsoft Co-founder"
+			},
+			{
+				text: "Productivity is being able to do things that you were never able to do before.",
+				author: "Franz Kafka"
+			},
+			{
+				text: "Always deliver more than expected.",
+				author: "Larry Page, Google co-founder"
+			},
+			{
+				text: "The entrepreneur always searches for change, responds to it, and exploits it as an opportunity.",
+				author: "Peter Drucker"
+			},
+			{
+				text: "Timing, perseverance, and ten years of trying will eventually make you look like an overnight success.",
+				author: "Biz Stone, co-founder of Twitter"
+			},
+			{
+				text: "There's nothing wrong with staying small. You can do big things with a small team.",
+				author: "Jason Fried, founder of 37signals"
+			},
+			{
+				text: "Action is the foundational key to all success.",
+				author: "Pablo Picasso"
+			},
+			{
+				text: "The true price of anything you do is the amount of time you exchange for it.",
+				author: "Henry David Thoreau"
+			},
+			{
+				text: "Obstacles are those frightful things you see when you take your eyes off your goal.",
+				author: "Henry Ford"
+			},
+			{
+				text: "If you spend too much time thinking about a thing, you'll never get it done.",
+				author: "Bruce Lee"
+			},
+			{
+				text: "Try not to become a man of success. Rather become a man of value.",
+				author: "Albert Einstein"
+			},
+			{
+				text: "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+				author: "Thomas Edison"
+			},
+			{
+				text: "Success consists of going from failure to failure without loss of enthusiasm.",
+				author: "Winston Churchill"
+			},
+			{
+				text: "I never dreamed about success. I worked for it.",
+				author: "Estée Lauder"
+			},
+			{
+				text: "Success is simple. Do what's right, the right way, at the right time.",
+				author: "Arnold H. Glasow"
+			},
+			{
+				text: "All progress takes place outside the comfort zone.",
+				author: "Michael John Bobak"
+			},
+			{
+				text: "The brick walls are there for a reason. The brick walls are not there to keep us out. The brick walls are there to give us a chance to show how badly we want something. Because the brick walls are there to stop the people who don't want it badly enough. They're there to stop the other people.",
+				author: "Randy Pausch, author and college professor"
+			},
+			{
+				text: "The secret of success is to know something nobody else knows.",
+				author: "Aristotle Onassis, Greek businessman"
+			},
+			{
+				text: "Everyone can rise above their circumstances and achieve success if they are dedicated to and passionate about what they do.",
+				author: "Nelson Mandela"
+			},
+			{
+				text: "However difficult life may seem, there is always something you can do and succeed at.",
+				author: "Stephen Hawking"
+			},
+			{
+				text: "A good leader takes a little more than his share of the blame, a little less than his share of the credit.",
+				author: "Arnold H. Glasow"
+			},
+			{
+				text: "A leader is one who knows the way, goes the way, and shows the way.",
+				author: "John C. Maxwell"
+			},
+			{
+				text: "A leader is best when people barely know he exists, when his work is done, his aim fulfilled, they will say: we did it ourselves.",
+				author: "Lao Tzu"
+			},
+			{
+				text: "When you can't make them see the light, make them feel the heat.",
+				author: "Ronald Reagan"
+			},
+			{
+				text: "Honor bespeaks worth. Confidence begets trust. Service brings satisfaction. Cooperation proves the quality of leadership.",
+				author: "James Cash Penney"
+			},
+			{
+				text: "Everyone who's ever taken a shower has an idea. It's the person who gets out of the shower, dries off, and does something about it who makes a difference.",
+				author: "Nolan Bushnell"
+			},
+			{
+				text: "I know of no single formula for success. But over the years I have observed that some attributes of leadership are universal and are often about finding ways of encouraging people to combine their efforts, their talents, their insights, their enthusiasm, and their inspiration to work together.",
+				author: "Queen Elizabeth II"
+			},
+			{
+				text: "Leadership is an individual sport, one that has to be fine-tuned to each of the people that reports to you. Leaders also need to provide the direction, energy, encouragement and inspiration for each person who reports directly to the leader as well as for the overall organization.",
+				author: "David Petraeus"
+			},
+			{
+				text: "One of the best paradoxes of leadership is a leader's need to be both stubborn and open-minded. A leader must insist on sticking to the vision and stay on course to the destination. But he must be open-minded during the process.",
+				author: "Simon Sinek"
+			},
+			{
+				text: "I am not afraid of an army of lions led by a sheep; I am afraid of an army of sheep led by a lion.",
+				author: "Alexander the Great"
+			},
+			{
+				text: "Delete the negative; accentuate the positive!",
+				author: "Donna Karan"
+			},
+			{
+				text: "I surround myself with positive, productive people of goodwill and decency.",
+				author: "Ted Nugent"
+			},
+			{
+				text: "In order to carry a positive action we must develop here a positive vision.",
+				author: "Dalai Lama"
+			},
+			{
+				text: "Correction does much, but encouragement does more.",
+				author: "Johann Wolfgang von Goethe"
+			},
+			{
+				text: "A positive attitude is something everyone can work on, and everyone can learn how to employ it.",
+				author: "Joan Lunden"
+			},
+			{
+				text: "You can't live a positive life with a negative mind and if you have a positive outcome you have a positive income and just to have more positivity and just to kind of laugh it off.",
+				author: "Miley Cyrus"
+			},
+			{
+				text: "The ability to remain calm and focused in stressful situations is central to making positive decisions.",
+				author: "Goldie Hawn"
+			},
+			{
+				text: "The first thing successful people do is view failure as a positive signal to success.",
+				author: "Brendon Burchard"
+			},
+			{
+				text: "Design our world so that we have positive social and environmental side effects.",
+				author: "Bjarke Ingels"
+			},
+			{
+				text: "You must stand for something! It does not have to be grand, but it must be a positive that brings light to someone else's darkness.",
+				author: "Anthony Carmona"
+			},
+			{
+				text: "To know what you know and what you do not know, that is true knowledge.",
+				author: "Confucius"
+			},
+			{
+				text: "There is much pleasure to be gained from useless knowledge.",
+				author: "Bertrand Russell"
+			},
+			{
+				text: "Wisdom is the right use of knowledge. To know is not to be wise. Many men know a great deal, and are all the greater fools for it. There is no fool so great a fool as a knowing fool. But to know how to use knowledge is to have wisdom.",
+				author: "Charles Spurgeon"
+			},
+			{
+				text: "The larger the island of knowledge, the longer the shoreline of wonder.",
+				author: "Ralph W. Sockman"
+			},
+			{
+				text: "The best advice I ever got was that knowledge is power and to keep reading.",
+				author: "David Bailey"
+			},
+			{
+				text: "Perplexity is the beginning of knowledge.",
+				author: "Khalil Gibran"
+			},
+			{
+				text: "Those who have the knowledge, don't predict. Those who predict, don't have knowledge.",
+				author: "Lao Tzu"
+			},
+			{
+				text: "I'm hungry for knowledge. The whole thing is to learn every day, to get brighter and brighter. That's what this world is about. You look at someone like Gandhi, and he glowed. Martin Luther King glowed. Muhammad Ali glows. I think that's from being bright all the time, and trying to be brighter.",
+				author: "Jay-Z"
+			},
+			{
+				text: "I would rather excel in the knowledge of what is excellent, than in the extent of my power and possessions.",
+				author: "Plutarch"
+			},
+			{
+				text: "The only good is knowledge, and the only evil is ignorance.",
+				author: "Herodotus"
+			},
+			{
+				text: "The single biggest problem in communication is the illusion that it has taken place.",
+				author: "George Bernard Shaw"
+			},
+			{
+				text: "We have two ears and one mouth so that we can listen twice as much as we speak.",
+				author: "Epictetus"
+			},
+			{
+				text: "Communication – the human connection – is the key to personal and career success.",
+				author: "Paul J. Meyer"
+			},
+			{
+				text: "Of all of our inventions for mass communication, pictures still speak the most universally understood language.",
+				author: "Walt Disney"
+			},
+			{
+				text: "Talk low, talk slow, and don't say too much.",
+				author: "John Wayne"
+			},
+			{
+				text: "My belief is that communication is the best way to create strong relationships.",
+				author: "Jada Pinkett Smith"
+			},
+			{
+				text: "Good words are worth much, and cost little.",
+				author: "George Herbert"
+			},
+			{
+				text: "A different language is a different vision of life.",
+				author: "Federico Fellini"
+			},
+			{
+				text: "Science may never come up with a better office communication system than the coffee break.",
+				author: "Earl Wilson"
+			},
+			{
+				text: "By and large, language is a tool for concealing the truth.",
+				author: "George Carlin"
+			},
+			{
+				text: "Teamwork requires some sacrifice upfront; people who work as a team have to put the collective needs of the group ahead of their individual interests.",
+				author: "Patrick Lencioni"
+			},
+			{
+				text: "It is amazing what you can accomplish if you do not care who gets the credit.",
+				author: "Harry Truman"
+			},
+			{
+				text: "The ratio of we's to I's is the best indicator of the development of a team.",
+				author: "Lewis B. Ergen"
+			},
+			{
+				text: "I invite everyone to choose forgiveness rather than division, teamwork over personal ambition.",
+				author: "Jean-Francois Cope"
+			},
+			{
+				text: "You need to be aware of what others are doing, applaud their efforts, acknowledge their successes, and encourage them in their pursuits. When we all help one another, everybody wins.",
+				author: "Jim Stovall"
+			},
+			{
+				text: "The best teamwork comes from men who are working independently toward one goal in unison.",
+				author: "James Cash Penney"
+			},
+			{
+				text: "A group becomes a team when each member is sure enough of himself and his contribution to praise the skills of others.",
+				author: "Norman Shidle"
+			},
+			{
+				text: "One piece of log creates a small fire, adequate to warm you up, add just a few more pieces to blast an immense bonfire, large enough to warm up your entire circle of friends; needless to say, that individuality counts but teamwork dynamites.",
+				author: "Jin Kwon"
+			},
+			{
+				text: "Alone we can do so little, together we can do so much.",
+				author: "Helen Keller"
+			},
+			{
+				text: "Don't wait until everything is just right. It will never be perfect. There will always be challenges, obstacles and less than perfect conditions. So what? Get started now. With each step you take, you will grow stronger and stronger, more and more skilled, more and more self-confident, and more and more successful.",
+				author: "Mark Victor Hansen"
+			},
+			{
+				text: "We are valued in this world at the rate we desire to be valued.",
+				author: "Jean De La Bruvere"
+			},
+			{
+				text: "Love yourself first and everything else falls into line. You really have to love yourself to get anything done in this world.",
+				author: "Lucille Ball"
+			},
+			{
+				text: "The first step toward being loved is learning to love what you see when you look in the mirror.",
+				author: "Tadahiko Nagao"
+			},
+			{
+				text: "The most difficult thing is the decision to act, the rest is merely tenacity.",
+				author: "Amelia Earhart"
+			},
+			{
+				text: "The best time to plant a tree was 20 years ago. The second best time is now.",
+				author: "Chinese Proverb"
+			},
+			{
+				text: "Do one thing every day that scares you.",
+				author: "Eleanor Roosevelt"
+			},
+			{
+				text: "Impossible is just an opinion.",
+				author: "Paulo Coelho"
+			},
+			{
+				text: "You've got to get up every morning with determination if you're going to go to bed with satisfaction.",
+				author: "George Lorimer"
+			},
+			{
+				text: "Light tomorrow with today.",
+				author: "Elizabeth Barrett Browning"
+			},
+			{
+				text: "Move out of your comfort zone. You can only grow if you are willing to feel awkward and uncomfortable when you try something new.",
+				author: "Brian Tracy"
+			},
+			{
+				text: "We generate fears while we sit. We overcome them by action.",
+				author: "Dr. Henry Link"
+			},
+			{
+				text: "Make each day your masterpiece.",
+				author: "John Wooden"
+			},
+			{
+				text: "Amateurs sit around and wait for inspiration. The rest of us just get up and go to work.",
+				author: "Stephen King"
+			},
+			{
+				text: "Set your goals high, and don't stop till you get there.",
+				author: "Bo Jackson"
+			},
+			{
+				text: "The bad news is time flies. The good news is you're the pilot.",
+				author: "Michael Altshuler"
+			},
+			{
+				text: "Leaders are never satisfied; they continually strive to be better.",
+				author: "Brian Tracy"
+			},
+			{
+				text: "I love the winning, I can take the losing, but most of all I love to play.",
+				author: "Boris Becker"
+			},
+			{
+				text: "If you don't see yourself as a winner, then you cannot perform as a winner.",
+				author: "Zig Ziglar"
+			},
+			{
+				text: "Don't count the days, make the days count.",
+				author: "Muhammad Ali"
+			},
+			{
+				text: "I never lose. Either I win or learn.",
+				author: "Nelson Mandela"
+			},
+			{
+				text: "I can and I will. Watch me.",
+				author: "Carrie Green"
+			},
+			{
+				text: "The question isn't who is going to let me, it's who is going to stop me.",
+				author: "Ayn Rand"
+			},
+			{
+				text: "You can never quit. Winners never quit, and quitters never win.",
+				author: "Ted Turner"
+			},
+			{
+				text: "You can control two things: your work ethic and your attitude about anything.",
+				author: "Ali Krieger"
+			},
+			{
+				text: "I may not have gone where I intended to go, but I think I have ended up where I needed to be.",
+				author: "Douglas Adams"
+			},
+			{
+				text: "The essence of optimism is that it takes no account of the present, but it is a source of inspiration, of vitality and hope where others have resigned; it enables a man to hold his head high, to claim the future for himself and not to abandon it to his enemy.",
+				author: "Dietrich Bonhoeffer"
+			},
+			{
+				text: "The pessimist sees difficulty in every opportunity. The optimist sees the opportunity in every difficulty.",
+				author: "Winston Churchill"
+			},
+			{
+				text: "Never regret anything that made you smile.",
+				author: "Mark Twain"
+			},
+			{
+				text: "Folks are usually about as happy as they make up their minds to be.",
+				author: "Abraham Lincoln"
+			},
+			{
+				text: "We need to be like the eagle and have a fearless spirit of a conqueror!",
+				author: "Joyce Meyer"
+			},
+			{
+				text: "Those who lack the courage will always find a philosophy to justify it.",
+				author: "Albert Camus"
+			},
+			{
+				text: "Men make history and not the other way around. In periods where there is no leadership, society stands still. Progress occurs when courageous, skillful leaders seize the opportunity to change things for the better.",
+				author: "Harry S Truman"
+			},
+			{
+				text: "Courage is the greatest of all virtues, because if you haven't courage, you may not have an opportunity to use any of the others.",
+				author: "Samuel Johnson"
+			},
+			{
+				text: "You will never do anything in this world without courage. It is the greatest quality of the mind next to honor.",
+				author: "Aristotle"
+			},
+			{
+				text: "You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face. You are able to say to yourself, 'I lived through this horror. I can take the next thing that comes along.'",
+				author: "Eleanor Roosevelt"
+			},
+			{
+				text: "You have power over your mind – not outside events. Realize this, and you will find strength.",
+				author: "Marcus Aurelius"
+			},
+			{
+				text: "Strength does not come from physical capacity. It comes from an indomitable will.",
+				author: "Mahatma Gandhi"
+			},
+			{
+				text: "No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.",
+				author: "Buddha"
+			},
+			{
+				text: "Only one who devotes himself to a cause with his whole strength and soul can be a true master. For this reason mastery demands all of a person.",
+				author: "Albert Einstein"
+			},
+			{
+				text: "The strong man is the one who is able to intercept at will the communication between the senses and the mind.",
+				author: "Napoleon Bonaparte"
+			},
+			{
+				text: "Strength is the capacity to break a chocolate bar into four pieces with your bare hands – and then eat just one of the pieces.",
+				author: "Judith Viorst"
+			},
+			{
+				text: "He who conquers others is strong; He who conquers himself is mighty.",
+				author: "Lao Tzu"
+			},
+			{
+				text: "Let me tell you the secret that has led me to my goal. My strength lies solely in my tenacity.",
+				author: "Louis Pasteur"
+			},
+			{
+				text: "Unity is strength… when there is teamwork and collaboration, wonderful things can be achieved.",
+				author: "Mattie Stepanek"
+			},
+			{
+				text: "One who gains strength by overcoming obstacles possesses the only strength which can overcome adversity.",
+				author: "Albert Schweitzer"
+			},
+			{
+				text: "We are what our thoughts have made us; so take care about what you think. Words are secondary. Thoughts live; they travel far.",
+				author: "Swami Vivekananda"
+			},
+			{
+				text: "It's not what happens to you, but how you react to it that matters.",
+				author: "Epictetus"
+			},
+			{
+				text: "The best way to predict the future is to invent it.",
+				author: "Alan Kay"
+			},
+			{
+				text: "The greatest obstacle to discovery is not ignorance – it is the illusion of knowledge.",
+				author: "Daniel J. Boorstin"
+			},
+			{
+				text: "Wisdom outweighs any wealth.",
+				author: "Sophocles"
+			},
+			{
+				text: "Obstacles are those frightful things you see when you take your eyes off your goal.",
+				author: "Henry Ford"
+			},
+			{
+				text: "Knowledge comes, but wisdom lingers. It may not be difficult to store up in the mind a vast quantity of facts within a comparatively short time, but the ability to form judgments requires the severe discipline of hard work and the tempering heat of experience and maturity.",
+				author: "Calvin Coolidge"
+			},
+			{
+				text: "Wisdom is knowing what to do next; virtue is doing it.",
+				author: "David Starr Jordan"
+			},
+			{
+				text: "When you give yourself, you receive more than you give.",
+				author: "Antoine de Saint-Exupery"
+			},
+			{
+				text: "In action a great heart is the chief qualification. In work, a great head.",
+				author: "Arthur Schopenhauer"
+			},
+			{
+				text: "Your chances of success in any undertaking can always be measured by your belief in yourself.",
+				author: "Robert Collier"
+			},
+			{
+				text: "Great deeds are usually wrought at great risks.",
+				author: "Herodotus"
+			},
+			{
+				text: "You don't concentrate on risks. You concentrate on results. No risk is too great to prevent the necessary job from getting done.",
+				author: "Chuck Yeager"
+			},
+			{
+				text: "There are risks and costs to action. But they are far less than the long range risks of comfortable inaction.",
+				author: "John F. Kennedy"
+			},
+			{
+				text: "The biggest risk is not taking any risk… In a world that is changing really quickly, the only strategy that is guaranteed to fail is not taking risks.",
+				author: "Mark Zuckerberg"
+			},
+			{
+				text: "Take risks. Ask big questions. Don't be afraid to make mistakes; if you don't make mistakes, you're not reaching far enough.",
+				author: "David Packard"
+			},
+			{
+				text: "Love the giver more than the gift.",
+				author: "Brigham Young"
+			},
+			{
+				text: "Never worry about the size of your Christmas tree. In the eyes of children, they are all 30 feet tall.",
+				author: "Larry Wilde"
+			},
+			{
+				text: "Kindness is always fashionable, and always welcome.",
+				author: "Amelia Barr"
+			},
+			{
+				text: "There are far better things ahead than any we leave behind.",
+				author: "C.S. Lewis"
+			},
+			{
+				text: "As we struggle with shopping lists and invitations, compounded by December's bad weather, it is good to be reminded that there are people in our lives who are worth this aggravation, and people to whom we are worth the same.",
+				author: "Donald E. Westlake"
+			},
+			{
+				text: "I am grateful for what I am and have. My thanksgiving is perpetual.",
+				author: "Henry David Thoreau"
+			},
+			{
+				text: "Holidays – any holiday – are such a great opportunity to focus on bringing the family together.",
+				author: "Lidia Bastianich"
+			},
+			{
+				text: "There are three stages of man: he believes in Santa Claus; he does not believe in Santa Claus; he is Santa Claus.",
+				author: "Bob Phillips"
+			},
+			{
+				text: "Christmas is like candy; it slowly melts in your mouth sweetening every taste bud, making you wish it could last forever.",
+				author: "Richelle E. Goodrich"
+			},
+			{
+				text: "Once a year, go somewhere you have never been before.",
+				author: "Dalai Lama"
+			},
+			{
+				text: "If at first, you don't succeed, then skydiving isn't for you.",
+				author: "Steven Wright"
+			},
+			{
+				text: "An optimist is a person who starts a new diet on Thanksgiving Day.",
+				author: "Irv Kupcinet"
+			},
+			{
+				text: "I generally avoid temptation unless I can't resist it.",
+				author: "Mae West"
+			}
+			// Add more quotes here as you find them to increase variety!
+		];
+
+		function displayRandomQuote() {
+			const randomIndex = Math.floor(Math.random() * businessQuotes.length);
+			const randomQuote = businessQuotes[randomIndex];
+			document.getElementById('quote-display').innerHTML = `"${randomQuote.text}" - <b>${randomQuote.author}</b>`;
+		}
+
+		// --- Initial Calls & Intervals ---
+		displayRandomQuote(); // Display a random quote immediately on load
+
+		fetchLocationFromIP(); // Initiate location detection, which then triggers time updates</script></p></div><footer class="wrapper post__footer"><p class="post__last-updated">This article was updated on July 23, 2025</p><div class="post__share"><a href="https://api.whatsapp.com/send?text=Daily%20Insight https%3A%2F%2Fswot.works%2Ftoday-lesson%2F" class="js-share invert whatsapp" rel="nofollow noopener noreferrer"><svg class="icon" aria-hidden="true" focusable="false"><use xlink:href="https://swot.works/assets/svg/svg-map.svg#whatsapp"/></svg> <span>WhatsApp</span></a></div></footer></article><div class="post__comments"></div></main><footer class="footer"><div class="footer__inner"><div class="footer__copyright"><p><span style="color: #2dc26b;">© 2025 All rights reserved. This website and its content are the property of the owner</span></p></div></div></footer></div><script defer="defer" src="https://swot.works/assets/js/scripts.min.js?v=c2232aa7558e9517946129d2a1b8c770"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'overlay',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script>var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script><script>(function() {
+			var originalTitle = document.title;
+			var timeout;
+			document.addEventListener("visibilitychange", function() {
+				if (document.hidden) {
+					document.title = "👀 We miss you! Plz Come back!";
+				} else {
+					clearTimeout(timeout);
+					document.title = "🎉 Welcome back!";
+							setTimeout(function() {
+								document.title = originalTitle;
+							}, 2000);
+				}
+			});
+		})();</script><div class="pcb" data-behaviour="badge" data-behaviour-link="#cookie-settings" data-revision="1" data-config-ttl="90" data-debug-mode="false"><div role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="pcb-title" aria-describedby="pcb-txt" class="pcb__banner"><div class="pcb__inner"><div id="pcb-title" role="heading" aria-level="2" class="pcb__title">Guide + Cookies</div><div id="pcb-txt" class="pcb__txt">Accept cookies for a better viewing experience and please switch to desktop mode.</div><div class="pcb__buttons"><button type="button" class="pcb__btn pcb__btn--solid pcb__btn--accept">Okay</button></div></div></div><button class="pcb__badge" aria-label="Guide" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="40" height="40" viewBox="0 0 23 23" fill="currentColor"><path d="M21.41 12.71c-.08-.01-.15 0-.22 0h-.03c-.03 0-.05 0-.08.01-.07 0-.13.01-.19.04-.52.21-1.44.19-2.02-.22-.44-.31-.65-.83-.62-1.53a.758.758 0 0 0-.27-.61.73.73 0 0 0-.65-.14c-1.98.51-3.49.23-4.26-.78-.82-1.08-.73-2.89.24-4.49.14-.23.14-.52 0-.75a.756.756 0 0 0-.67-.36c-.64.03-1.11-.1-1.31-.35-.19-.26-.13-.71-.01-1.29.04-.18.06-.38.03-.59-.05-.4-.4-.7-.81-.66C5.1 1.54 1 6.04 1 11.48 1 17.28 5.75 22 11.6 22c5.02 0 9.39-3.54 10.39-8.42.08-.4-.18-.78-.58-.87Zm-9.81 7.82c-5.03 0-9.12-4.06-9.12-9.06 0-4.34 3.05-8 7.25-8.86-.08.7.05 1.33.42 1.81.24.32.66.67 1.38.84-.76 1.86-.65 3.78.36 5.11.61.81 2.03 2 4.95 1.51.18.96.71 1.54 1.18 1.87.62.43 1.38.62 2.1.62.05 0 .09 0 .13-.01-1.23 3.64-4.7 6.18-8.64 6.18ZM13 17c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1Zm5.29-12.3a.99.99 0 0 1-.29-.71c0-.55.45-.99 1-.99a1 1 0 0 1 .71.3c.19.19.29.44.29.71 0 .55-.45.99-1 .99a1 1 0 0 1-.71-.3ZM9 13.5c0 .83-.67 1.5-1.5 1.5S6 14.33 6 13.5 6.67 12 7.5 12s1.5.67 1.5 1.5Zm3.25.81a.744.744 0 0 1-.06-1.05c.28-.32.75-.34 1.05-.06.31.28.33.75.05 1.06-.15.16-.35.25-.56.25-.18 0-.36-.06-.5-.19ZM8.68 7.26c.41.37.44 1 .07 1.41-.2.22-.47.33-.75.33a.96.96 0 0 1-.67-.26c-.41-.37-.44-1-.07-1.41.37-.42 1-.45 1.41-.08Zm11.48 1.88c.18-.19.52-.19.7 0 .05.04.09.1.11.16.03.06.04.12.04.19 0 .13-.05.26-.15.35-.09.1-.22.15-.35.15s-.26-.05-.35-.15a.355.355 0 0 1-.11-.16.433.433 0 0 1-.04-.19c0-.13.05-.26.15-.35Zm-4.93-1.86a.75.75 0 1 1 1.059-1.06.75.75 0 0 1-1.059 1.06Z"/></svg></button></div><script>(function(win) {
+    if (!document.querySelector('.pcb')) {
+        return;
+    }
+
+    var cbConfig = {
+        behaviour: document.querySelector('.pcb').getAttribute('data-behaviour'),
+        behaviourLink: document.querySelector('.pcb').getAttribute('data-behaviour-link'),
+        revision: document.querySelector('.pcb').getAttribute('data-revision'),
+        configTTL: parseInt(document.querySelector('.pcb').getAttribute('data-config-ttl'), 10),
+        debugMode: document.querySelector('.pcb').getAttribute('data-debug-mode') === 'true',
+        initialState: null,
+        initialLsState: null,
+        previouslyAccepted: []
+    };
+
+    var cbUI = {
+        wrapper: document.querySelector('.pcb'),
+        banner: {
+            element: null,
+            btnAccept: null,
+            btnReject: null,
+            btnConfigure: null
+        },
+        popup: {
+            element: null,
+            btnClose: null,
+            btnSave: null,
+            btnAccept: null,
+            btnReject: null,
+            checkboxes: null,
+        },
+        overlay: null,
+        badge: null,
+        blockedScripts: document.querySelectorAll('script[type^="gdpr-blocker/"]'),
+        triggerLinks: cbConfig.behaviourLink ? document.querySelectorAll('a[href*="' + cbConfig.behaviourLink + '"]') : null
+    };
+
+    function initUI () {
+        // setup banner elements
+        cbUI.banner.element = cbUI.wrapper.querySelector('.pcb__banner');
+        cbUI.banner.btnAccept = cbUI.banner.element.querySelector('.pcb__btn--accept');
+        cbUI.banner.btnReject = cbUI.banner.element.querySelector('.pcb__btn--reject');
+        cbUI.banner.btnConfigure = cbUI.banner.element.querySelector('.pcb__btn--configure');
+
+        // setup popup elements
+        if (cbUI.wrapper.querySelector('.pcb__popup')) {
+            cbUI.popup.element = cbUI.wrapper.querySelector('.pcb__popup');
+            cbUI.popup.btnClose = cbUI.wrapper.querySelector('.pcb__popup__close');
+            cbUI.popup.btnSave = cbUI.popup.element.querySelector('.pcb__btn--save');
+            cbUI.popup.btnAccept = cbUI.popup.element.querySelector('.pcb__btn--accept');
+            cbUI.popup.btnReject = cbUI.popup.element.querySelector('.pcb__btn--reject');
+            cbUI.popup.checkboxes = cbUI.popup.element.querySelector('input[type="checkbox"]');
+            // setup overlay
+            cbUI.overlay = cbUI.wrapper.querySelector('.pcb__overlay');
+        }
+
+        cbUI.badge = cbUI.wrapper.querySelector('.pcb__badge');
+
+        if (cbConfig.behaviour.indexOf('link') > -1) {
+            for (var i = 0; i < cbUI.triggerLinks.length; i++) {
+                cbUI.triggerLinks[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showBannerOrPopup();
+                });
+            }
+        }
+    }
+
+    function initState () {
+        var lsKeyName = getConfigName();
+        var currentConfig = localStorage.getItem(lsKeyName);
+        var configIsFresh = checkIfConfigIsFresh();
+
+        if (!configIsFresh || currentConfig === null) {
+            if (cbConfig.debugMode) {
+                console.log('🍪 Config not found, or configuration expired');
+            }
+
+            if (window.publiiCBGCM) {
+                gtag('consent', 'default', {
+                    'ad_storage': window.publiiCBGCM.defaultState.ad_storage ? 'granted' : 'denied',
+                    'ad_personalization': window.publiiCBGCM.defaultState.ad_personalization ? 'granted' : 'denied',
+                    'ad_user_data': window.publiiCBGCM.defaultState.ad_user_data ? 'granted' : 'denied',
+                    'analytics_storage': window.publiiCBGCM.defaultState.analytics_storage ? 'granted' : 'denied',
+                    'personalization_storage': window.publiiCBGCM.defaultState.personalization_storage ? 'granted' : 'denied',
+                    'functionality_storage': window.publiiCBGCM.defaultState.functionality_storage ? 'granted' : 'denied',
+                    'security_storage': window.publiiCBGCM.defaultState.security_storage ? 'granted' : 'denied'
+                });  
+                
+                if (cbConfig.debugMode) {
+                    console.log('🍪 GCMv2 DEFAULT STATE: ' + JSON.stringify({
+                        'ad_storage': window.publiiCBGCM.defaultState.ad_storage ? 'granted' : 'denied',
+                        'ad_personalization': window.publiiCBGCM.defaultState.ad_personalization ? 'granted' : 'denied',
+                        'ad_user_data': window.publiiCBGCM.defaultState.ad_user_data ? 'granted' : 'denied',
+                        'analytics_storage': window.publiiCBGCM.defaultState.analytics_storage ? 'granted' : 'denied',
+                        'personalization_storage': window.publiiCBGCM.defaultState.personalization_storage ? 'granted' : 'denied',
+                        'functionality_storage': window.publiiCBGCM.defaultState.functionality_storage ? 'granted' : 'denied',
+                        'security_storage': window.publiiCBGCM.defaultState.security_storage ? 'granted' : 'denied'
+                    }));
+                }
+            }
+
+            showBanner();
+        } else if (typeof currentConfig === 'string') {
+            if (cbConfig.debugMode) {
+                console.log('🍪 Config founded');
+            }
+
+            cbConfig.initialLsState = currentConfig.split(',');
+
+            if (window.publiiCBGCM) {
+                gtag('consent', 'default', {
+                    'ad_storage': getDefaultConsentState(currentConfig, 'ad_storage'),
+                    'ad_personalization': getDefaultConsentState(currentConfig, 'ad_personalization'),
+                    'ad_user_data': getDefaultConsentState(currentConfig, 'ad_user_data'),
+                    'analytics_storage': getDefaultConsentState(currentConfig, 'analytics_storage'),
+                    'personalization_storage': getDefaultConsentState(currentConfig, 'personalization_storage'),
+                    'functionality_storage': getDefaultConsentState(currentConfig, 'functionality_storage'),
+                    'security_storage': getDefaultConsentState(currentConfig, 'security_storage')
+                });
+                
+                if (cbConfig.debugMode) {
+                    console.log('🍪 GCMv2 DEFAULT STATE: ' + JSON.stringify({
+                        'ad_storage': getDefaultConsentState(currentConfig, 'ad_storage'),
+                        'ad_personalization': getDefaultConsentState(currentConfig, 'ad_personalization'),
+                        'ad_user_data': getDefaultConsentState(currentConfig, 'ad_user_data'),
+                        'analytics_storage': getDefaultConsentState(currentConfig, 'analytics_storage'),
+                        'personalization_storage': getDefaultConsentState(currentConfig, 'personalization_storage'),
+                        'functionality_storage': getDefaultConsentState(currentConfig, 'functionality_storage'),
+                        'security_storage': getDefaultConsentState(currentConfig, 'security_storage')
+                    }));
+                }
+            }
+
+            showBadge();
+
+            if (cbUI.popup.element) {
+                var allowedGroups = currentConfig.split(',');
+                var checkedCheckboxes = cbUI.popup.element.querySelectorAll('input[type="checkbox"]:checked');
+
+                for (var j = 0; j < checkedCheckboxes.length; j++) {
+                    var name = checkedCheckboxes[j].getAttribute('data-group-name');
+
+                    if (name && name !== '-' && allowedGroups.indexOf(name) === -1) {
+                        checkedCheckboxes[j].checked = false;
+                    }
+                }
+
+                for (var i = 0; i < allowedGroups.length; i++) {
+                    var checkbox = cbUI.popup.element.querySelector('input[type="checkbox"][data-group-name="' + allowedGroups[i] + '"]');
+
+                    if (checkbox) {
+                        checkbox.checked = true;
+                    }
+
+                    allowCookieGroup(allowedGroups[i]);
+                }
+            }
+        }
+
+        setTimeout(function () {
+            cbConfig.initialState = getInitialStateOfConsents();
+        }, 0);
+    }
+
+    function checkIfConfigIsFresh () {
+        var lastConfigSave = localStorage.getItem('publii-gdpr-cookies-config-save-date');
+
+        if (lastConfigSave === null) {
+            return false;
+        }
+
+        lastConfigSave = parseInt(lastConfigSave, 10);
+
+        if (lastConfigSave === 0) {
+            return true;
+        }
+
+        if (+new Date() - lastConfigSave < cbConfig.configTTL * 24 * 60 * 60 * 1000) {
+            return true;
+        }
+
+        return false;
+    }
+
+    function getDefaultConsentState (currentConfig, consentGroup) {
+        let configGroups = currentConfig.split(',');
+
+        for (let i = 0; i < configGroups.length; i++) {
+            let groupName = configGroups[i];
+            let group = window.publiiCBGCM.groups.find(group => group.cookieGroup === groupName);
+
+            if (group && group[consentGroup]) {
+                return 'granted';
+            }
+        }  
+        
+        if (window.publiiCBGCM.defaultState[consentGroup]) {
+            return 'granted'; 
+        }
+        
+        return 'denied';
+    }
+
+    function initBannerEvents () {
+        cbUI.banner.btnAccept.addEventListener('click', function (e) {
+            e.preventDefault();
+            acceptAllCookies('banner');
+            showBadge();
+        }, false);
+
+        if (cbUI.banner.btnReject) {
+            cbUI.banner.btnReject.addEventListener('click', function (e) {
+                e.preventDefault();
+                rejectAllCookies();
+                showBadge();
+            }, false);
+        }
+
+        if (cbUI.banner.btnConfigure) {
+            cbUI.banner.btnConfigure.addEventListener('click', function (e) {
+                e.preventDefault();
+                hideBanner();
+                showAdvancedPopup();
+                showBadge();
+            }, false);
+        }
+    }
+
+    function initPopupEvents () {
+        if (!cbUI.popup.element) {
+            return;
+        }
+
+        cbUI.overlay.addEventListener('click', function (e) {
+            hideAdvancedPopup();
+        }, false);
+
+        cbUI.popup.element.addEventListener('click', function (e) {
+            e.stopPropagation();
+        }, false);
+
+        cbUI.popup.btnAccept.addEventListener('click', function (e) {
+            e.preventDefault();
+            acceptAllCookies('popup');
+        }, false);
+
+        cbUI.popup.btnReject.addEventListener('click', function (e) {
+            e.preventDefault();
+            rejectAllCookies();
+        }, false);
+
+        cbUI.popup.btnSave.addEventListener('click', function (e) {
+            e.preventDefault();
+            saveConfiguration();
+        }, false);
+
+        cbUI.popup.btnClose.addEventListener('click', function (e) {
+            e.preventDefault();
+            hideAdvancedPopup();
+        }, false);
+    }
+
+    function initBadgeEvents () {
+        if (!cbUI.badge) {
+            return;
+        }
+
+        cbUI.badge.addEventListener('click', function (e) {
+            showBannerOrPopup();
+        }, false);
+    }
+
+    initUI();
+    initState();
+    initBannerEvents();
+    initPopupEvents();
+    initBadgeEvents();
+
+    /**
+     * API
+     */
+    function addScript (src, inline) {
+        var newScript = document.createElement('script');
+
+        if (src) {
+            newScript.setAttribute('src', src);
+        }
+
+        if (inline) {
+            newScript.text = inline;
+        }
+
+        document.body.appendChild(newScript);
+    }
+
+    function allowCookieGroup (allowedGroup) {
+        var scripts = document.querySelectorAll('script[type="gdpr-blocker/' + allowedGroup + '"]');
+        cbConfig.previouslyAccepted.push(allowedGroup);
+    
+        for (var j = 0; j < scripts.length; j++) {
+            addScript(scripts[j].src, scripts[j].text);
+        }
+
+        var groupEvent = new Event('publii-cookie-banner-unblock-' + allowedGroup);
+        document.body.dispatchEvent(groupEvent);
+        unlockEmbeds(allowedGroup);
+
+        if (cbConfig.debugMode) {
+            console.log('🍪 Allowed group: ' + allowedGroup);
+        }
+
+        if (window.publiiCBGCM && (!cbConfig.initialLsState || cbConfig.initialLsState.indexOf(allowedGroup) === -1)) {
+            let consentResult = {};
+            let group = window.publiiCBGCM.groups.find(group => group.cookieGroup === allowedGroup);
+
+            if (group) {
+                let foundSomeConsents = false;
+
+                Object.keys(group).forEach(key => {
+                    if (key !== 'cookieGroup' && group[key] === true) {
+                        consentResult[key] = 'granted';
+                        foundSomeConsents = true;
+                    }
+                });
+
+                if (foundSomeConsents) {
+                    gtag('consent', 'update', consentResult);   
+
+                    if (cbConfig.debugMode) {
+                        console.log('🍪 GCMv2 UPDATE: ' + JSON.stringify(consentResult));
+                    }
+                }
+            }
+        }
+    }
+
+    function showBannerOrPopup () {
+        if (cbUI.popup.element) {
+            showAdvancedPopup();
+        } else {
+            showBanner();
+        }
+    }
+
+    function showAdvancedPopup () {
+        cbUI.popup.element.classList.add('is-visible');
+        cbUI.overlay.classList.add('is-visible');
+        cbUI.popup.element.setAttribute('aria-hidden', 'false');
+        cbUI.overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function hideAdvancedPopup () {
+        cbUI.popup.element.classList.remove('is-visible');
+        cbUI.overlay.classList.remove('is-visible');
+        cbUI.popup.element.setAttribute('aria-hidden', 'true');
+        cbUI.overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    function showBanner () {
+        cbUI.banner.element.classList.add('is-visible');
+        cbUI.banner.element.setAttribute('aria-hidden', 'false');
+    }
+
+    function hideBanner () {
+        cbUI.banner.element.classList.remove('is-visible');
+        cbUI.banner.element.setAttribute('aria-hidden', 'true');
+    }
+
+    function showBadge () {
+        if (!cbUI.badge) {
+            return;
+        }
+
+        cbUI.badge.classList.add('is-visible');
+        cbUI.badge.setAttribute('aria-hidden', 'false');
+    }
+
+    function getConfigName () {
+        var lsKeyName = 'publii-gdpr-allowed-cookies';
+
+        if (cbConfig.revision) {
+            lsKeyName = lsKeyName + '-v' + parseInt(cbConfig.revision, 10);
+        }
+
+        return lsKeyName;
+    }
+
+    function storeConfiguration (allowedGroups) {
+        var lsKeyName = getConfigName();
+        var dataToStore = allowedGroups.join(',');
+        localStorage.setItem(lsKeyName, dataToStore);
+
+        if (cbConfig.configTTL === 0) {
+            localStorage.setItem('publii-gdpr-cookies-config-save-date', 0);
+
+            if (cbConfig.debugMode) {
+                console.log('🍪 Store never expiring configuration');
+            }
+        } else {
+            localStorage.setItem('publii-gdpr-cookies-config-save-date', +new Date());
+        }
+    }
+
+    function getInitialStateOfConsents () {
+        if (!cbUI.popup.element) {
+            return [];
+        }
+
+        var checkedGroups = cbUI.popup.element.querySelectorAll('input[type="checkbox"]:checked');
+        var groups = [];
+
+        for (var i = 0; i < checkedGroups.length; i++) {
+            var allowedGroup = checkedGroups[i].getAttribute('data-group-name');
+
+            if (allowedGroup !== '') {
+                groups.push(allowedGroup);
+            }
+        }
+
+        if (cbConfig.debugMode) {
+            console.log('🍪 Initial state: ' + groups.join(', '));
+        }
+
+        return groups;
+    }
+
+    function getCurrentStateOfConsents () {
+        if (!cbUI.popup.element) {
+            return [];
+        }
+
+        var checkedGroups = cbUI.popup.element.querySelectorAll('input[type="checkbox"]:checked');
+        var groups = [];
+
+        for (var i = 0; i < checkedGroups.length; i++) {
+            var allowedGroup = checkedGroups[i].getAttribute('data-group-name');
+
+            if (allowedGroup !== '') {
+                groups.push(allowedGroup);
+            }
+        }
+
+        if (cbConfig.debugMode) {
+            console.log('🍪 State to save: ' + groups.join(', '));
+        }
+
+        return groups;
+    }
+
+    function getAllGroups () {
+        if (!cbUI.popup.element) {
+            return [];
+        }
+
+        var checkedGroups = cbUI.popup.element.querySelectorAll('input[type="checkbox"]');
+        var groups = [];
+
+        for (var i = 0; i < checkedGroups.length; i++) {
+            var allowedGroup = checkedGroups[i].getAttribute('data-group-name');
+
+            if (allowedGroup !== '') {
+                groups.push(allowedGroup);
+            }
+        }
+
+        return groups;
+    }
+
+    function acceptAllCookies (source) {
+        var groupsToAccept = getAllGroups();
+        storeConfiguration(groupsToAccept);
+
+        for (var i = 0; i < groupsToAccept.length; i++) {
+            var group = groupsToAccept[i];
+
+            if (cbConfig.initialState.indexOf(group) > -1 || cbConfig.previouslyAccepted.indexOf(group) > -1) {
+                if (cbConfig.debugMode) {
+                    console.log('🍪 Skip previously activated group: ' + group);
+                }
+
+                continue;
+            }
+
+            allowCookieGroup(group);
+        }
+
+        if (cbUI.popup.element) {
+            var checkboxesToCheck = cbUI.popup.element.querySelectorAll('input[type="checkbox"]');
+
+            for (var j = 0; j < checkboxesToCheck.length; j++) {
+                checkboxesToCheck[j].checked = true;
+            }
+        }
+
+        if (cbConfig.debugMode) {
+            console.log('🍪 Accept all cookies: ', groupsToAccept.join(', '));
+        }
+
+        if (source === 'popup') {
+            hideAdvancedPopup();
+        } else if (source === 'banner') {
+            hideBanner();
+        }
+    }
+
+    function rejectAllCookies () {
+        if (cbConfig.debugMode) {
+            console.log('🍪 Reject all cookies');
+        }
+
+        storeConfiguration([]);
+        setTimeout(function () {
+            window.location.reload();
+        }, 100);
+    }
+
+    function saveConfiguration () {
+        var groupsToAccept = getCurrentStateOfConsents();
+        storeConfiguration(groupsToAccept);
+
+        if (cbConfig.debugMode) {
+            console.log('🍪 Save new config: ', groupsToAccept.join(', '));
+        }
+
+        if (reloadIsNeeded(groupsToAccept)) {
+            setTimeout(function () {
+                window.location.reload();
+            }, 100);
+            return;
+        }
+
+        for (var i = 0; i < groupsToAccept.length; i++) {
+            var group = groupsToAccept[i];
+
+            if (cbConfig.initialState.indexOf(group) > -1 || cbConfig.previouslyAccepted.indexOf(group) > -1) {
+                if (cbConfig.debugMode) {
+                    console.log('🍪 Skip previously activated group: ' + group);
+                }
+
+                continue;
+            }
+
+            allowCookieGroup(group);
+        }
+
+        hideAdvancedPopup();
+    }
+
+    function reloadIsNeeded (groupsToAccept) {
+        // check if user rejected consent for initial groups
+        var initialGroups = cbConfig.initialState;
+        var previouslyAcceptedGroups = cbConfig.previouslyAccepted;
+        var groupsToCheck = initialGroups.concat(previouslyAcceptedGroups);
+
+        for (var i = 0; i < groupsToCheck.length; i++) {
+            var groupToCheck = groupsToCheck[i];
+
+            if (groupToCheck !== '' && groupsToAccept.indexOf(groupToCheck) === -1) {
+                if (cbConfig.debugMode) {
+                    console.log('🍪 Reload is needed due lack of: ', groupToCheck);
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function unlockEmbeds (cookieGroup) {
+        var iframesToUnlock = document.querySelectorAll('.pec-wrapper[data-consent-group-id="' + cookieGroup + '"]');
+
+        for (var i = 0; i < iframesToUnlock.length; i++) {
+            var iframeWrapper = iframesToUnlock[i];
+            iframeWrapper.querySelector('.pec-overlay').classList.remove('is-active');
+            iframeWrapper.querySelector('.pec-overlay').setAttribute('aria-hidden', 'true');
+            var iframe = iframeWrapper.querySelector('iframe');
+            iframe.setAttribute('src', iframe.getAttribute('data-consent-src'));
+        }
+    }
+
+    win.publiiEmbedConsentGiven = function (cookieGroup) {
+        // it will unlock embeds
+        allowCookieGroup(cookieGroup);
+
+        var checkbox = cbUI.popup.element.querySelector('input[type="checkbox"][data-group-name="' + cookieGroup + '"]');
+
+        if (checkbox) {
+            checkbox.checked = true;
+        }
+
+        var groupsToAccept = getCurrentStateOfConsents();
+        storeConfiguration(groupsToAccept);
+
+        if (cbConfig.debugMode) {
+            console.log('🍪 Save new config: ', groupsToAccept.join(', '));
+        }
+    }
+})(window);</script></body></html>

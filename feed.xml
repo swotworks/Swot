@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>SWOT</title>
-    <link href="https://swotworks.github.io/Swot/feed.xml" rel="self" />
-    <link href="https://swotworks.github.io/Swot" />
+    <link href="https://swot.works/feed.xml" rel="self" />
+    <link href="https://swot.works" />
     <updated>2025-08-18T15:50:27+05:00</updated>
     <author>
         <name>Muhammad Shoib</name>
     </author>
-    <id>https://swotworks.github.io/Swot</id>
+    <id>https://swot.works</id>
 
     <entry>
         <title>Small Business Stats in Pakistan, Asia &amp; Globally</title>
         <author>
             <name>Muhammad Shoib</name>
         </author>
-        <link href="https://swotworks.github.io/Swot/small-business-stats-in-pakistan-asia-and-globally/"/>
-        <id>https://swotworks.github.io/Swot/small-business-stats-in-pakistan-asia-and-globally/</id>
+        <link href="https://swot.works/small-business-stats-in-pakistan-asia-and-globally/"/>
+        <id>https://swot.works/small-business-stats-in-pakistan-asia-and-globally/</id>
             <category term="SWOT"/>
 
         <updated>2025-07-25T20:55:36+05:00</updated>
@@ -152,8 +152,8 @@
         <author>
             <name>Muhammad Shoib</name>
         </author>
-        <link href="https://swotworks.github.io/Swot/common-record-keeping-challenges-for-small-businesses-in-pakistan-and-how-to-overcome-them/"/>
-        <id>https://swotworks.github.io/Swot/common-record-keeping-challenges-for-small-businesses-in-pakistan-and-how-to-overcome-them/</id>
+        <link href="https://swot.works/common-record-keeping-challenges-for-small-businesses-in-pakistan-and-how-to-overcome-them/"/>
+        <id>https://swot.works/common-record-keeping-challenges-for-small-businesses-in-pakistan-and-how-to-overcome-them/</id>
             <category term="SWOT"/>
 
         <updated>2025-07-25T20:46:27+05:00</updated>
@@ -194,8 +194,8 @@
         <author>
             <name>Muhammad Shoib</name>
         </author>
-        <link href="https://swotworks.github.io/Swot/from-analysis-to-action-how-to-use-your-swot-findings-for-business-growth-in-pakistan/"/>
-        <id>https://swotworks.github.io/Swot/from-analysis-to-action-how-to-use-your-swot-findings-for-business-growth-in-pakistan/</id>
+        <link href="https://swot.works/from-analysis-to-action-how-to-use-your-swot-findings-for-business-growth-in-pakistan/"/>
+        <id>https://swot.works/from-analysis-to-action-how-to-use-your-swot-findings-for-business-growth-in-pakistan/</id>
             <category term="SWOT"/>
 
         <updated>2025-07-25T20:40:03+05:00</updated>
@@ -297,8 +297,8 @@
         <author>
             <name>Muhammad Shoib</name>
         </author>
-        <link href="https://swotworks.github.io/Swot/swot-analysis-for-small-businesses-in-pakistan-your-blueprint-for-growth/"/>
-        <id>https://swotworks.github.io/Swot/swot-analysis-for-small-businesses-in-pakistan-your-blueprint-for-growth/</id>
+        <link href="https://swot.works/swot-analysis-for-small-businesses-in-pakistan-your-blueprint-for-growth/"/>
+        <id>https://swot.works/swot-analysis-for-small-businesses-in-pakistan-your-blueprint-for-growth/</id>
             <category term="SWOT"/>
 
         <updated>2025-07-25T20:33:47+05:00</updated>
@@ -426,8 +426,8 @@
         <author>
             <name>Muhammad Shoib</name>
         </author>
-        <link href="https://swotworks.github.io/Swot/benefits-of-online-record-keeping-for-small-businesses/"/>
-        <id>https://swotworks.github.io/Swot/benefits-of-online-record-keeping-for-small-businesses/</id>
+        <link href="https://swot.works/benefits-of-online-record-keeping-for-small-businesses/"/>
+        <id>https://swot.works/benefits-of-online-record-keeping-for-small-businesses/</id>
             <category term="SWOT"/>
 
         <updated>2025-07-25T19:59:28+05:00</updated>
